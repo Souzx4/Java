@@ -5,19 +5,16 @@ public class ContaBancaria {
     private final int numeroConta;
     private double saldo;
     private boolean status;
-
     public ContaBancaria(String titular, int numeroConta) {
         this.titular = titular;
         this.numeroConta = numeroConta;
         this.saldo = 0.0;
         this.status = false;
     }
-    
     public void abrirConta() {
         this.status = true;
         System.out.println("Conta ativada!");
     }
-    
     public void depositar(double valor) {
         if (this.status == true && valor > 0) { // só deposita se a conta estiver ativa
             this.saldo += valor;  // saldo = saldo + valor
@@ -37,7 +34,6 @@ public class ContaBancaria {
     public double getSaldo() {
         return this.saldo;
     }
-    
     public String getTitular() {
         return this.titular;
     }
