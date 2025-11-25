@@ -10,4 +10,15 @@
         <maven.compiler.release>25</maven.compiler.release>
         <exec.mainClass>com.mycompany.relogioswing.RelogioSwing</exec.mainClass>
     </properties>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.jpg</include>
+                    <include>**/*.png</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 </project>
