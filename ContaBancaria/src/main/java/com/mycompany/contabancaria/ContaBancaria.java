@@ -4,6 +4,8 @@
 
 package com.mycompany.contabancaria;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Eletel_Monitor
@@ -11,6 +13,11 @@ package com.mycompany.contabancaria;
 public class ContaBancaria {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        try {
+            System.setOut(new java.io.PrintStream(System.out, true, "UTF-8"));
+        } catch (java.io.UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        Scanner Scanner = new Scanner(System.in, "ISO-8859-1");
     }
 }
