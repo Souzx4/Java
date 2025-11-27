@@ -8,12 +8,21 @@ public class ContaBanco {
     private boolean status;
     
     //Metodos personalizados
+    public void estadoAtual(){
+        System.out.println("--------------------------------------");
+        System.out.println("Conta: " + this.getNumConta());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Dono: " + this.getDono());
+        System.out.println("Saldo: " + this.getSaldo());
+        System.out.println("Status: " + this.getStatus());
+    }   
+    
     public void abriConta(String t){
         this.setTipo(t);
         this.setStatus(true);
-        if (t == "CC") {
+        if (t == "Corrente") {
             this.setSaldo(50);
-        } else if(t == "CP") {
+        } else if(t == "Poupança") {
             this.setSaldo(150);
         }
         System.out.println("Conta aberta com sucesso!");
@@ -25,19 +34,52 @@ public class ContaBanco {
             System.out.println("Conta não pode ser fechada pois tem débito");
         } else {
             this.setStatus(false);
+<<<<<<< HEAD
             System.out.println("Conta fechada com sucesso!!");
         }
     }
     public void depositar(){
         if(this.getStatus()) {
             
+=======
+            System.out.println("Conta fechada com sucesso!");
         }
     }
-    public void sacar(){
-        
+    public void depositar(float v){
+        if (this.getStatus()) {
+            //{this.saldo = this.saldo + v;
+            this.setSaldo(this.getSaldo() + v);
+            System.out.println("Deposito realizado na conta de " + this.getDono());
+        } else{
+            System.out.println("Impossivel depositar em uma conta fechada!");
+>>>>>>> 4e77f0b48d44df1b161754203be09e40838692d6
+        }
+    }
+    public void sacar(float v){
+        if (this.getStatus()) {
+            if(this.getSaldo() >= v) {
+                this.setSaldo(this.getSaldo() - v);
+                System.out.println("saque realizado na conta de " + this.getDono());
+            } else {
+                System.out.println("Saldo insuficiente");   
+            }                 
+        } else {
+            System.out.println("Impossivel sacar de uma conta fechada");
+        }
     }
     public void pagarMensal(){
-        
+        int v = 0;
+        if (this.getTipo() == "Corrente") {
+            v = 12;
+        } else if (this.getTipo() == "Poupança"){
+            v = 20;
+        }
+        if (this.getStatus()) {
+            this.setSaldo(this.getSaldo() - v);
+            System.out.println("Mensalidade paga com sucesso por " + this.getDono());
+        } else {
+            System.out.println("Impossivel pagar em uma conta fechada!");
+        }
     }
     //Metodos especiais
 
