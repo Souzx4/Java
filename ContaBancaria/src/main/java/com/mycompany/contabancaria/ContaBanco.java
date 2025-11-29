@@ -34,6 +34,11 @@ public class ContaBanco {
             System.out.println("Conta não pode ser fechada pois tem débito");
         } else {
             this.setStatus(false);
+            System.out.println("Conta fechada com sucesso!!");
+        }
+    }
+    public void depositar(){
+        if(this.getStatus()) {
             System.out.println("Conta fechada com sucesso!");
         }
     }
